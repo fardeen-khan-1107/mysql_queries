@@ -1,0 +1,57 @@
+use bank;
+create table data1
+(
+roll int primary key,
+name varchar(20),
+salary float);
+insert into data1 values(1,'fardeen',20000),
+(2,'ayush',300),
+(3,'shomaya',40000);
+select *from data1;
+
+create table data2
+(
+id int unique
+);
+insert into data2 value(22);
+insert into data2 value(20);
+insert into data2 value(22);
+select *from data2;
+
+
+create table data3
+(
+no int primary key
+);
+insert into data3 value(21);
+insert into data3 value(23);
+insert into data3 value(21);
+
+create table data4
+(
+h int default 10,
+naam varchar(20)
+);
+insert into data4  values('fardeen');
+insert into data4 values('ayush');
+select *from data4;
+
+create table data5
+(
+roll int,
+sname varchar(20),
+marks float,
+location varchar(20)
+);
+insert into data5 values(1,"fardeen",98,'punganure'),
+(2,"ayush",98,'ap'),
+(3,"khan",81,'mp'),
+(4,"raju",90,'punganure'),
+(5,"lakshmi",79,'assom'),
+(6,"ravi",56,'uganda');
+select *from data5 where location  in("punganure","mp");
+SELECT * FROM data5 WHERE location not IN ('punganure', 'mp') limit 2;
+select *from data5  order by marks desc;
+select  avg(marks) from data5;
+select location from data5 group by location;
+select location,count(roll) from data5 group by location order by location asc;
